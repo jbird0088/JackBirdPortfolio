@@ -3,19 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  --primary-background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+  --primary-color: #ffffff;
+  --section-heading-color: #64d2ff; /* Cool Blue */
+  --hero-background: radial-gradient(
+    circle,
+    rgba(47, 128, 237, 0.2),
+    transparent
+  );
+  --blue-glow: #64d2ff;
+  --hero-button-bg: #64d2ff;
+  --hero-button-bg-hover: #3b82f6;
+  --card-bg: linear-gradient(135deg, #1f2937, #0f172a);
+  --card-hover-shadow: rgba(59, 130, 246, 0.3);
+  --light-gray-text: #e2e8f0;
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
 }

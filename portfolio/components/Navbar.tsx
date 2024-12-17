@@ -55,7 +55,7 @@ export default function Navbar() {
           </li>
           <li className={styles.navItem}>
             <Link href="/projects" className={styles.link}>
-              Music
+              Projects
             </Link>
           </li>
           <li className={styles.navItem}>

@@ -1,13 +1,16 @@
-/* styles/Navbar.module.css */
-
 /* Navbar container styling */
 .nav {
-  background-color: black; /* Navbar background color */
-  color: white; /* Text color */
+  background: linear-gradient(
+    90deg,
+    #1e293b,
+    #0f172a
+  ); /* Dark blue gradient background */
+  color: #f1f5f9; /* Light gray text color */
   padding: 1rem 5%; /* Add padding to the top/bottom and sides */
   position: sticky; /* Stick the navbar to the top of the viewport */
   top: 0; /* Navbar position relative to the top */
   z-index: 50; /* Ensures navbar is above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 /* Inner container for aligning logo and navigation links */
@@ -15,7 +18,7 @@
   display: flex; /* Flexbox for horizontal alignment */
   justify-content: space-between; /* Space between logo and links */
   align-items: center; /* Vertically align items */
-  max-width: 2500px; /* Restrict container width to 1200px */
+  max-width: 1200px; /* Restrict container width */
   margin: 0 auto; /* Center the container horizontally */
   width: 100%; /* Make sure it spans the full width */
 }
@@ -24,13 +27,16 @@
 .title {
   font-size: 1.5rem; /* Adjusted for readability */
   font-weight: bold; /* Bold text for emphasis */
+  color: #93c5fd; /* Soft Blue */
   white-space: nowrap; /* Prevents the logo from wrapping */
+  text-transform: uppercase; /* Uppercase for a clean look */
+  letter-spacing: 1px;
 }
 
 /* Hamburger menu button (visible only on mobile) */
 .hamburger {
   display: none; /* Initially hidden; visible only on smaller screens */
-  color: white;
+  color: #f1f5f9; /* Light gray */
   border: none;
   background: none;
   cursor: pointer;
@@ -39,6 +45,11 @@
 .hamburger svg {
   height: 1.5rem; /* Icon height */
   width: 1.5rem; /* Icon width */
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover svg {
+  transform: scale(1.1); /* Slight scale effect */
 }
 
 /* Navigation list container */
@@ -54,17 +65,18 @@
 /* Individual navigation links */
 .navItem a {
   text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit text color */
+  color: #f1f5f9; /* Light gray text color */
   font-size: 1rem; /* Adjust font size for readability */
-  transition: color 0.3s ease-in-out; /* Smooth hover effect */
+  transition: color 0.3s ease-in-out, transform 0.3s ease; /* Smooth hover effect */
+  font-weight: 500;
 }
 
-/* Hover effect for navigation links */
 .navItem a:hover {
-  color: #7c3aed; /* Tailwind green-400 equivalent */
+  color: #93c5fd; /* Soft blue on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
-/* Responsive styles for larger screens */
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .hamburger {
     display: block; /* Show the hamburger menu on smaller screens */
@@ -77,12 +89,27 @@
     top: 4rem; /* Space below the navbar */
     left: 0;
     right: 0;
-    background-color: black; /* Dropdown background color */
+    background: linear-gradient(
+      90deg,
+      #0f172a,
+      #1e293b
+    ); /* Gradient dropdown background */
     padding: 1rem; /* Add padding to the dropdown */
     z-index: 50; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
   .navList.active {
     display: flex; /* Show the dropdown menu when active */
+  }
+
+  .navItem a {
+    text-align: center;
+    padding: 0.75rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .navItem a:hover {
+    color: #93c5fd; /* Soft blue on hover */
   }
 }

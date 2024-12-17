@@ -68,7 +68,7 @@ export default function Page() {
           viewport={{ once: true }}
         >
           <Image
-            src="/profile.jpg" // Use the same image here
+            src="/image/myself.jpg" // Use the same image here
             alt="About Image"
             width={300}
             height={300}
