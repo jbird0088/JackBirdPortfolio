@@ -1,0 +1,88 @@
+/* styles/Navbar.module.css */
+
+/* Navbar container styling */
+.nav {
+  background-color: black; /* Navbar background color */
+  color: white; /* Text color */
+  padding: 1rem 5%; /* Add padding to the top/bottom and sides */
+  position: sticky; /* Stick the navbar to the top of the viewport */
+  top: 0; /* Navbar position relative to the top */
+  z-index: 50; /* Ensures navbar is above other elements */
+}
+
+/* Inner container for aligning logo and navigation links */
+.container {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Vertically align items */
+  max-width: 2500px; /* Restrict container width to 1200px */
+  margin: 0 auto; /* Center the container horizontally */
+  width: 100%; /* Make sure it spans the full width */
+}
+
+/* Styling for the logo or title */
+.title {
+  font-size: 1.5rem; /* Adjusted for readability */
+  font-weight: bold; /* Bold text for emphasis */
+  white-space: nowrap; /* Prevents the logo from wrapping */
+}
+
+/* Hamburger menu button (visible only on mobile) */
+.hamburger {
+  display: none; /* Initially hidden; visible only on smaller screens */
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger svg {
+  height: 1.5rem; /* Icon height */
+  width: 1.5rem; /* Icon width */
+}
+
+/* Navigation list container */
+.navList {
+  display: flex; /* Default to flex layout */
+  flex-direction: row; /* Horizontal layout for desktop */
+  gap: 2rem; /* Add spacing between navigation links */
+  list-style: none; /* Remove default list styling */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Individual navigation links */
+.navItem a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+  font-size: 1rem; /* Adjust font size for readability */
+  transition: color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect for navigation links */
+.navItem a:hover {
+  color: #7c3aed; /* Tailwind green-400 equivalent */
+}
+
+/* Responsive styles for larger screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show the hamburger menu on smaller screens */
+  }
+
+  .navList {
+    display: none; /* Hide navigation links on mobile by default */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute; /* Position for dropdown */
+    top: 4rem; /* Space below the navbar */
+    left: 0;
+    right: 0;
+    background-color: black; /* Dropdown background color */
+    padding: 1rem; /* Add padding to the dropdown */
+    z-index: 50; /* Ensure it appears above other elements */
+  }
+
+  .navList.active {
+    display: flex; /* Show the dropdown menu when active */
+  }
+}
