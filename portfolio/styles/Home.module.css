@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* General Body Styles */
+.home {
+  font-family: "Press Start 2P", cursive;
+  background-color: #000; /* Black background */
+  color: #39ff14; /* Neon green text */
+  height: 100vh; /* Full-screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Retro CRT Scanlines Effect */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Moving Neon Grid */
+.home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 255, 200, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(0deg, rgba(0, 255, 200, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: moveGrid 10s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+@keyframes moveGrid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-60px, -60px);
+  }
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background-color: #ff007f;
+  box-shadow: 0 0 8px 4px #ff007f;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatParticle 5s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+  width: 12px;
+  height: 12px;
+  top: 10%;
+  left: 20%;
+  animation-duration: 6s;
+}
+
+.particle:nth-child(2) {
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 70%;
+  animation-duration: 8s;
+}
+
+.particle:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  top: 80%;
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.particle:nth-child(4) {
+  width: 18px;
+  height: 18px;
+  top: 40%;
+  left: 10%;
+  animation-duration: 5s;
+}
+
+@keyframes floatParticle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Glowing Screen Container */
+.screen {
+  text-align: center;
+  z-index: 3;
+  animation: screen-glow 1s infinite alternate;
+}
+
+@keyframes screen-glow {
+  0% {
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+  }
+  100% {
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 25px #39ff14;
+  }
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  color: #ff007f;
+  text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+  margin-bottom: 1rem;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1rem;
+  color: #00fff6;
+  text-shadow: 0 0 5px #00fff6, 0 0 10px #00fff6;
+  margin-bottom: 2rem;
+}
+
+/* Start Button */
+.startButton {
+  background-color: transparent;
+  color: #39ff14;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: 3px solid #39ff14;
+  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.startButton:hover {
+  color: #ff007f;
+  border-color: #ff007f;
+  box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+  text-shadow: 0 0 10px #ff007f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .startButton {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
