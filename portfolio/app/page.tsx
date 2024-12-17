@@ -7,7 +7,7 @@ export default function Home() {
       <main className={styles.hero}>
         <h2>Hi, I'm Your Name</h2>
         <p>
-          I’m a Software Engineer specializing in building exceptional web
+          Im a Software Engineer specializing in building exceptional web
           experiences.
         </p>
       </main>
