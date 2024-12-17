@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
@@ -37,7 +36,7 @@ export default function Page() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Hi, I'm <span style={{ color: "#c084fc" }}>Your Name</span>
+          Hi, Im <span style={{ color: "#c084fc" }}>Your Name</span>
         </motion.h1>
         <motion.p
           className={styles.heroText}
@@ -76,10 +75,10 @@ export default function Page() {
             className={styles.aboutImage}
           />
           <p className={styles.aboutText}>
-            I’m a passionate software engineer who loves building web
+            Im a passionate software engineer who loves building web
             applications with clean and maintainable code. I specialize in
             modern web technologies to deliver fast and efficient user
-            experiences. Let’s create something amazing together.
+            experiences. Lets create something amazing together.
           </p>
         </motion.div>
       </section>
