@@ -5,7 +5,7 @@ export default function Home() {
     <div className={`${styles.container}`}>
       {/* Hero */}
       <main className={styles.hero}>
-        <h2>Hi, I'm Your Name</h2>
+        <h2>Hi, Im Your Name</h2>
         <p>
           Im a Software Engineer specializing in building exceptional web
           experiences.
