@@ -70,7 +70,7 @@ export default function Page() {
             transition={{ duration: 0.7 }}
           >
             <p className={styles.aboutText}>
-              Hey there! I'm Jack, a{" "}
+              Hey there! I&apos;m Jack, a{" "}
               <span className={styles.highlight}>developer</span> passionate
               about building intuitive and impactful software. I enjoy working
               on <span className={styles.highlight}>web applications</span>,
