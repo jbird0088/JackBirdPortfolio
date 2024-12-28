@@ -1,0 +1,215 @@
+.container {
+  padding: 5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #64d2ff;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 5rem;
+  color: #cbd5e1;
+}
+
+.projectsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Project Card for Separation */
+.projectCard {
+  background-color: #1e293b;
+  border-radius: 16px;
+  padding: 4rem 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Alternate Backgrounds for Separation */
+.altBackground {
+  background-color: #111827;
+}
+
+/* Project Content Layout */
+.projectContent {
+  display: flex;
+  align-items: center; /* Vertical Center Alignment */
+  justify-content: space-between;
+  gap: 3rem; /* Reduce Gap for Better Proximity */
+  padding: 2rem 0;
+}
+
+/* Adjust Text Width for Balance */
+.projectText {
+  flex: 1;
+  max-width: 550px;
+  text-align: left;
+  z-index: 2;
+}
+
+.projectText h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #64d2ff;
+}
+
+.projectText p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
+}
+
+/* Center Key Features and Lists */
+.projectText h3 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: #64d2ff;
+}
+
+.projectText ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.projectText li {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #cbd5e1;
+}
+
+/* Call to Action Link */
+.projectLink {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #64d2ff;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.projectLink:hover {
+  background-color: #4bb8e8;
+}
+
+/* Image Styling */
+.projectImageWrapper {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -500px; /* Move Image Up */
+  position: relative;
+  z-index: 1;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .projectContent {
+    flex-direction: column; /* Stack Image and Text Vertically */
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .projectText {
+    text-align: left;
+    max-width: 90%;
+  }
+
+  .projectImageWrapper {
+    margin-top: -20px; /* Move Image Less on Smaller Screens */
+    width: 100%;
+  }
+
+  .projectText h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .projectCard {
+    padding: 3rem 2rem;
+  }
+
+  .projectText h2 {
+    font-size: 2.2rem;
+  }
+
+  .projectText p {
+    font-size: 1.2rem;
+  }
+
+  .projectText h3 {
+    font-size: 1.4rem;
+  }
+
+  .projectImage {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .projectCard {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .projectContent {
+    gap: 1.5rem;
+  }
+
+  .projectText h2 {
+    font-size: 1.8rem;
+  }
+
+  .projectText p {
+    font-size: 1.1rem;
+  }
+
+  .projectText h3 {
+    font-size: 1.3rem;
+  }
+
+  .projectImage {
+    width: 100%;
+  }
+}
