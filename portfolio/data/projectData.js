@@ -11,7 +11,7 @@ const projects = [
       "Scalable Architecture: Designed to handle large datasets and expand to additional use cases in the future, such as disaster recovery planning or supply chain optimization.",
     ],
     image: "/image/RBC_Project.webp",
-    link: "", // No link provided for NDA
+    link: "#", // No link provided for NDA
     nda: true,
     type: "nda",
   },

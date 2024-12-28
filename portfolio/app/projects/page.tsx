@@ -5,19 +5,8 @@ import Image from "next/image";
 import projects from "../../data/projectData";
 import styles from "../../styles/projects.module.css";
 
-type Project = {
-  title: string;
-  description: string;
-  techStack: string[];
-  features: string[];
-  image: string;
-  link: string;
-  type: "pdf" | "website" | "nda";
-  nda?: boolean;
-};
-
 // Helper function to handle dynamic link behavior
-const handleProjectLink = (project: Project) => {
+const handleProjectLink = (project: any) => {
   if (project.nda) {
     return (
       <motion.button
@@ -30,17 +19,6 @@ const handleProjectLink = (project: Project) => {
   }
 
   // Open PDFs in a new tab directly
-  if (project.nda) {
-    return (
-      <motion.button
-        disabled
-        className={`${styles.projectLink} ${styles.disabledButton}`}
-      >
-        NDA Restricted
-      </motion.button>
-    );
-  }
-
   if (project.type === "pdf") {
     return (
       <motion.a
@@ -54,6 +32,7 @@ const handleProjectLink = (project: Project) => {
     );
   }
 
+  // External websites or GitHub links
   return (
     <motion.a
       href={project.link}
