@@ -34,14 +34,22 @@ export default function ProjectsPage() {
             className={`${styles.projectCard} ${
               index % 2 === 0 ? styles.altBackground : ""
             }`}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.15,
+              ease: "easeOut",
+            }}
           >
             <div className={styles.projectContent}>
               <motion.div
                 className={styles.projectImageWrapper}
+                initial={{ scale: 0.9, y: 30 }}
+                whileInView={{ scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
@@ -53,7 +61,17 @@ export default function ProjectsPage() {
                 />
               </motion.div>
 
-              <div className={styles.projectText}>
+              <motion.div
+                className={styles.projectText}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+              >
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>
 
@@ -73,7 +91,7 @@ export default function ProjectsPage() {
                 >
                   View Project
                 </motion.a>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         ))}
