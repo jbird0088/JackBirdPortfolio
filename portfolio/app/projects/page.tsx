@@ -5,6 +5,46 @@ import Image from "next/image";
 import projects from "../../data/projectData";
 import styles from "../../styles/projects.module.css";
 
+// Helper function to handle dynamic link behavior
+const handleProjectLink = (project: any) => {
+  if (project.nda) {
+    return (
+      <motion.button
+        disabled
+        className={`${styles.projectLink} ${styles.disabledButton}`}
+      >
+        NDA Restricted
+      </motion.button>
+    );
+  }
+
+  // Open PDFs in a new tab directly
+  if (project.type === "pdf") {
+    return (
+      <motion.a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.projectLink}
+      >
+        View PDF
+      </motion.a>
+    );
+  }
+
+  // External websites or GitHub links
+  return (
+    <motion.a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.projectLink}
+    >
+      View Project
+    </motion.a>
+  );
+};
+
 export default function ProjectsPage() {
   return (
     <div className={styles.container}>
@@ -82,15 +122,8 @@ export default function ProjectsPage() {
                   ))}
                 </ul>
 
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  className={styles.projectLink}
-                >
-                  View Project
-                </motion.a>
+                {/* Dynamic Link Handling */}
+                {handleProjectLink(project)}
               </motion.div>
             </div>
           </motion.div>

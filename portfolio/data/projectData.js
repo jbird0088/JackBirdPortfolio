@@ -11,7 +11,9 @@ const projects = [
       "Scalable Architecture: Designed to handle large datasets and expand to additional use cases in the future, such as disaster recovery planning or supply chain optimization.",
     ],
     image: "/image/RBC_Project.webp",
-    link: "https://github.com/username/ai-assistant",
+    link: "", // No link provided for NDA
+    nda: true,
+    type: "nda",
   },
   {
     title: "Golf Cart Management System",
@@ -26,7 +28,8 @@ const projects = [
       "Operational Efficiency: Reduces manual effort and errors, improving the overall workflow for golf course staff and pro shop operations.",
     ],
     image: "/image/golf_management.webp",
-    link: "https://github.com/username/ar-shopping",
+    link: "files/Golf_Management.pdf",
+    type: "pdf",
   },
   {
     title: "Sentiment Analysis with LSTM",
@@ -40,7 +43,8 @@ const projects = [
       "Optimized Workflow: Utilizes the Adam optimizer for adaptive learning rates and early stopping to prevent overfitting during training.",
     ],
     image: "/image/AI_Project.webp",
-    link: "https://github.com/username/blockchain-ledger",
+    link: "files/AI_Final_Project.pdf",
+    type: "pdf",
   },
   {
     title: "The Chronicles of DICE MAN",
@@ -54,7 +58,8 @@ const projects = [
       "Game Jam Success: Developed under a tight deadline for the GMTK Game Jam, showcasing the team's creativity and efficiency.",
     ],
     image: "/image/Dice_man.webp",
-    link: "https://github.com/username/blockchain-ledger",
+    link: "https://jbird88.itch.io/the-chronicles-of-dice-man",
+    type: "website",
   },
 ];
 
