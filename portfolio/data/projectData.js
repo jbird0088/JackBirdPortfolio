@@ -29,6 +29,7 @@ const projects = [
     ],
     image: "/image/golf_management.webp",
     link: "files/Golf_Management.pdf",
+    nda: false,
     type: "pdf",
   },
   {
@@ -44,6 +45,7 @@ const projects = [
     ],
     image: "/image/AI_Project.webp",
     link: "files/AI_Final_Project.pdf",
+    nda: false,
     type: "pdf",
   },
   {
@@ -59,6 +61,7 @@ const projects = [
     ],
     image: "/image/Dice_man.webp",
     link: "https://jbird88.itch.io/the-chronicles-of-dice-man",
+    nda: false,
     type: "website",
   },
 ];

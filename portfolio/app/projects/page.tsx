@@ -2,22 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-const projects: Project[] = require("../../data/projectData").default;
+import projects from "../../data/projectData";
 import styles from "../../styles/projects.module.css";
 
-type Project = {
-  title: string;
-  description: string;
-  techStack: string[];
-  features: string[];
-  image: string;
-  link: string;
-  type: "nda" | "pdf" | "website";
-  nda?: boolean;
-};
-
 // Helper function to handle dynamic link behavior
-const handleProjectLink = (project: Project) => {
+const handleProjectLink = (project: any) => {
   if (project.nda) {
     return (
       <motion.button
