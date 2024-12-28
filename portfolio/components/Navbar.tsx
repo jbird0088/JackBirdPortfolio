@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.container}>
         {/* Logo section */}
-        <h1 className={styles.title}>Software Engineer</h1>
+        <h1 className={styles.title}>Software Developer</h1>
 
         {/* Hamburger Menu Button for mobile */}
         <button className={styles.hamburger} onClick={toggleMenu}>

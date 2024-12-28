@@ -1,140 +1,200 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "../styles/home.module.css";
+import projects from "../data/projectData";
 
 export default function Page() {
-  const projects = [
-    { title: "Project Alpha", description: "AI-powered productivity tool" },
-    { title: "Project Beta", description: "E-commerce with AR technology" },
-    { title: "Project Gamma", description: "Blockchain for supply chain" },
-    { title: "Project Delta", description: "Next-gen social platform" },
-  ];
-
   return (
     <div className={styles.container}>
       {/* Hero Section */}
-      <section id="home" className={styles.hero}>
+      <section className={styles.hero}>
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
           <Image
-            src="/image/myself.jpg" // Ensure the correct image path in the public folder
+            src="/image/Myself.webp"
             alt="Profile Picture"
-            width={250}
-            height={250}
+            width={300}
+            height={300}
             className={styles.heroImage}
           />
         </motion.div>
-        <motion.h1
-          className={styles.heroTitle}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Hi, Im <span style={{ color: "#c084fc" }}>Your Name</span>
-        </motion.h1>
-        <motion.p
-          className={styles.heroText}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Crafting digital experiences that inspire.
-        </motion.p>
-        <motion.a
-          href="#contact"
-          className={styles.heroButton}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          Get in touch
-        </motion.a>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className={styles.section}>
-        <h2 className={styles.sectionHeading}>About Me</h2>
         <motion.div
-          className="flex flex-col md:flex-row items-center gap-12"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className={styles.heroContent}
         >
-          <Image
-            src="/image/myself.jpg" // Use the same image here
-            alt="About Image"
-            width={300}
-            height={300}
-            className={styles.aboutImage}
-          />
-          <p className={styles.aboutText}>
-            Im a passionate software engineer who loves building web
-            applications with clean and maintainable code. I specialize in
-            modern web technologies to deliver fast and efficient user
-            experiences. Lets create something amazing together.
-          </p>
+          <h1 className={styles.heroTitle}>
+            Hi, I&apos;m <span className={styles.gradientText}>Jack</span>
+          </h1>
+          <p className={styles.heroSubtitle}>Building tomorrows tech, today.</p>
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.1 }}
+            className={styles.heroButton}
+          >
+            Let&apos;s Collaborate
+          </motion.a>
         </motion.div>
       </section>
 
+      {/* About Section */}
+      <section className={styles.about}>
+        <motion.h2
+          className={styles.aboutTitle}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          About Me
+        </motion.h2>
+
+        <div className={styles.aboutWrapper}>
+          <motion.div
+            className={styles.aboutContent}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className={styles.aboutText}>
+              Hey there! I'm Jack, a{" "}
+              <span className={styles.highlight}>developer</span> passionate
+              about building intuitive and impactful software. I enjoy working
+              on <span className={styles.highlight}>web applications</span>,
+              exploring{" "}
+              <span className={styles.highlight}>new technologies</span>, and
+              creating projects that solve real-world challenges.
+            </p>
+            <p className={styles.aboutText}>
+              My focus lies in{" "}
+              <span className={styles.highlight}>full-stack development</span>,
+              crafting smooth user experiences, and writing clean, efficient
+              code.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className={styles.aboutImage}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <Image
+              src="/image/aboutPageImage.webp"
+              alt="Jack's Profile Picture"
+              width={250}
+              height={250}
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Projects Section */}
-      <section id="projects" className={styles.section}>
-        <h2 className={styles.sectionHeading}>Projects</h2>
+      <section className={styles.projects}>
+        <motion.h2
+          className={styles.aboutTitle}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          My Work
+        </motion.h2>
         <div className={styles.projectGrid}>
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               className={styles.projectCard}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
             >
-              <h3 className={styles.projectTitle}>{project.title}</h3>
-              <p className={styles.projectDescription}>{project.description}</p>
+              <motion.img
+                src={project.image}
+                alt={project.title}
+                className={styles.projectImage}
+                whileHover={{ scale: 1.1 }}
+              />
+              <div className={styles.projectContent}>
+                <h3 className={styles.projectTitle}>{project.title}</h3>
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.projectLink}
+                >
+                  View Project
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section
-        id="contact"
-        className={`${styles.section} ${styles.textCenter}`}
-      >
-        <h2 className={styles.sectionHeading}>Get In Touch</h2>
+      <section className={styles.contact} id="contact">
+        <motion.h2
+          className={styles.contactTitle}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Get in Touch
+        </motion.h2>
+        <motion.p
+          className={styles.contactText}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Whether you have a project in mind or just want to say hi, feel free
+          to reach out. I’d love to hear from you!
+        </motion.p>
         <div className={styles.contactLinks}>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/jbird0088"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.contactButton}
           >
-            <Github className="h-5 w-5" /> GitHub
+            <Github size={20} /> GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/jackbird88"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.contactButton}
           >
-            <Linkedin className="h-5 w-5" /> LinkedIn
+            <Linkedin size={20} /> LinkedIn
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:jackbird0088@gmail.com"
             className={styles.contactButton}
           >
-            <Mail className="h-5 w-5" /> Email
+            <Mail size={20} /> Email
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} Your Name. All rights reserved.
-      </footer>
     </div>
   );
 }
