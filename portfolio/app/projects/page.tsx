@@ -5,8 +5,12 @@ import Image from "next/image";
 import projects from "../../data/projectData";
 import styles from "../../styles/projects.module.css";
 
-// Helper function to handle dynamic link behavior
-const handleProjectLink = (project: any) => {
+const handleProjectLink = (project: {
+  nda?: boolean;
+  type?: string;
+  link: string;
+}) => {
+  // If project is under NDA, return a disabled button
   if (project.nda) {
     return (
       <motion.button
@@ -18,7 +22,7 @@ const handleProjectLink = (project: any) => {
     );
   }
 
-  // Open PDFs in a new tab directly
+  // Handle PDF links
   if (project.type === "pdf") {
     return (
       <motion.a
@@ -32,7 +36,7 @@ const handleProjectLink = (project: any) => {
     );
   }
 
-  // External websites or GitHub links
+  // Handle external website or GitHub links
   return (
     <motion.a
       href={project.link}
